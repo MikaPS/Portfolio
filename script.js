@@ -15,5 +15,6 @@ function toggleMenu() {
 }
 
 function closeMenu() {
+  const navLinks = document.getElementById("navLinks");
   navLinks.classList.remove("active");
 }
