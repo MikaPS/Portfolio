@@ -8,3 +8,12 @@ function showTab(index) {
   panels[index].classList.add("active");
   buttons[index].classList.add("active");
 }
+
+function toggleMenu() {
+  const navLinks = document.getElementById("navLinks");
+  navLinks.classList.toggle("active");
+}
+
+function closeMenu() {
+  navLinks.classList.remove("active");
+}

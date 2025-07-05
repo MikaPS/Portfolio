@@ -15,16 +15,22 @@
   </head>
   <body>
     <nav class="navbar">
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <div class="nav-title">
         <h3>Mika Peer Shalem</h3>
       </div>
-      <div class="nav-links">
-        <a href="#aboutme">About Me</a>
-        <a href="#education">Education</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
+      <div class="nav-links" id="navLinks">
+        <a href="#aboutme" onclick="closeMenu()">About Me</a>
+        <a href="#education" onclick="closeMenu()">Education</a>
+        <a href="#experience" onclick="closeMenu()">Experience</a>
+        <a href="#projects" onclick="closeMenu()">Projects</a>
       </div>
     </nav>
+
     <!------------ About Me  ------------>
     <section id="aboutme">
       <h1>About Me</h1>
