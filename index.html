@@ -14,146 +14,260 @@
     <title>Portfolio</title>
   </head>
   <body>
+    <nav class="navbar">
+      <div class="nav-title">
+        <h3>Mika Peer Shalem</h3>
+      </div>
+      <div class="nav-links">
+        <a href="#aboutme">About Me</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+      </div>
+    </nav>
+    <!------------ About Me  ------------>
+    <section id="aboutme">
+      <h1>About Me</h1>
+      <div class="experience-box">
+        <h2>Hi, I am Mika!</h2>
+        <p>A developer passionate about Unity and Virtual Reality.</p>
+        <a
+          href="resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="button-link"
+          >Resume</a
+        >
+        <a
+          href="https://www.linkedin.com/in/mika-peer-shalem/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="button-link"
+          >LinkedIn</a
+        >
+        <a
+          href="https://github.com/MikaPS/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="button-link"
+          >GitHub</a
+        >
+      </div>
+    </section>
+    <!------------ EDUCATION  ------------>
+    <section id="education">
+      <h1>Education</h1>
+      <div class="education-box">
+        <h2>University of California, Santa Cruz</h2>
+        <h3>B.S. Computer Science: Game Design & & B.S. Cognitive Science</h3>
+        <p><strong> SEP 2021 - JUN 2025 | GPA: 3.97</strong></p>
+        <p><strong> Relevant Courses: </strong></p>
+        <p style="text-align: left; color: #2b395c">
+          Game Development: Game Production Studio, Game Design Studio, Game
+          Systems, Game Technologies
+        </p>
+        <p style="text-align: left; color: #2b395c">
+          Software Engineering: Database Systems I, Artificial Intelligence,
+          Game AI, Game Development Patterns, Advanced Programming, Data Structs
+          & Algorithms
+        </p>
+
+        <!-- <p class="button-hover">Unity C#</p>
+      <p class="button-hover">VR</p> -->
+        <p class="awards">
+          🏆Dean's Honors
+          <i>(Won 11 Times)</i><br />
+          Awarded to students with a quarterly GPA above 3.83 who are at the top
+          15% of their class.
+        </p>
+        <p class="awards">
+          🏆College Scholars Program <br />
+          A selective honors program that allows outstanding students to explore
+          research early in their career. <br />
+          Each cohort has between 20-25 students out of a class of about 3,000
+          students.
+        </p>
+        <p></p>
+      </div>
+    </section>
+
     <!------------ EXPERIENCE  ------------>
-    <h1>Experience</h1>
-    <div class="tabs">
-      <button class="tab-button active" onclick="showTab(0)">
-        <span class="tab-title">VR Developer Intern</span><br />
-        <span class="tab-sub">@ Immergo Labs</span>
-      </button>
-      <button class="tab-button" onclick="showTab(1)">
-        <span class="tab-title">Research Assistant</span><br />
-        <span class="tab-sub">@ High Level Perception Lab</span>
-      </button>
-      <button class="tab-button" onclick="showTab(2)">
-        <span class="tab-title">Student Assistant</span><br />
-        <span class="tab-sub">@ CEC Office of Compliance, Assistance & Enforcement</span>
-      </button>
-    </div>
-
-    <div class="tab-content">
-      <div class="tab-panel active">
-        <div class="experience-box">
-        <h2>VR Developer Intern @ Immergo Labs</h2>
-        <p>JAN 2025 - PRESENT</p>
-        <ul>
-          <li>
-            Built a Unity-based VR tool that enables users to create, save, and
-            share custom physical therapy programs utilizing JSON-based exercise
-            recordings
-          </li>
-          <li>
-            Implemented an advanced waypoint authoring system to allow creators
-            to design and visualize motion paths
-          </li>
-          <li>
-            Developed diverse game modes to cater to varying user preferences,
-            featuring different environments, rewards, and difficulty levels
-          </li>
-          <li>
-            Designed an intuitive VR user interface tailored to accommodate
-            users with various mobility challenges
-          </li>
-        </ul>
-        <p class="button-hover">Unity C#</p>
-        <p class="button-hover">VR</p>
+    <section id="experience">
+      <h1>Experience</h1>
+      <div class="tabs">
+        <button class="tab-button active" onclick="showTab(0)">
+          <span class="tab-title"
+            >Unity Coding Intern => VR Developer Intern</span
+          ><br />
+          <span class="tab-sub">@ Immergo Labs</span>
+        </button>
+        <button class="tab-button" onclick="showTab(1)">
+          <span class="tab-title">Research Assistant</span><br />
+          <span class="tab-sub">@ High Level Perception Lab</span>
+        </button>
+        <button class="tab-button" onclick="showTab(2)">
+          <span class="tab-title">Student Assistant</span><br />
+          <span class="tab-sub"
+            >@ CEC Office of Compliance, Assistance & Enforcement</span
+          >
+        </button>
       </div>
-    </div>
+
+      <div class="tab-content">
+        <div class="tab-panel active">
+          <div class="experience-box">
+            <h2>Unity Coding Intern => VR Developer Intern @ Immergo Labs</h2>
+            <p>JUN 2024 - AUG 2024 => JAN 2025 - PRESENT</p>
+            <ul>
+              <li>
+                Developed diverse game modes to cater to varying user
+                preferences, featuring different environments, rewards, and
+                difficulty levels
+              </li>
+              <li>
+                Designed an intuitive VR user interface tailored to accommodate
+                users with various mobility challenges
+              </li>
+              <li>
+                Built a Unity-based VR tool that enables users to create, save,
+                and share custom physical therapy programs utilizing JSON-based
+                exercise recordings
+              </li>
+              <li>
+                Implemented an advanced waypoint authoring system to allow
+                creators to design and visualize motion paths
+              </li>
+            </ul>
+            <p class="button-hover">Unity C#</p>
+            <p class="button-hover">VR</p>
+          </div>
+        </div>
       </div>
       <div class="tab-panel">
         <div class="experience-box">
-        <h2>Research Assistant @ High Level Perception Lab</h2>
-        <p>APR 2023 - PRESENT</p>
-        <ul>
-          <li>
-            Developed a MATLAB-based experiment that presents visual stimuli at different orientations and integrated real-time eye-tracking via the Gazepoint API
-          </li>
-          <li>
-            Implemented calibration, gaze recording, and automatic data logging to external files for over 100 subjects</li>
-          <li>
-            Built a Python data analysis pipeline to process and visualize gaze metrics across trials and subjects</li>
-          <li>
-            Programmed a study that was presented to the Vision Sciences Society with a principal investigator
-          </li>
-        </ul>
-        <p class="button-hover">Python</p>
-        <p class="button-hover">Matlab</p>
-      </div>
+          <h2>Research Assistant @ High Level Perception Lab</h2>
+          <p>APR 2023 - PRESENT</p>
+          <ul>
+            <li>
+              Developed a MATLAB-based experiment that presents visual stimuli
+              at different orientations and integrated real-time eye-tracking
+              via the Gazepoint API
+            </li>
+            <li>
+              Implemented calibration, gaze recording, and automatic data
+              logging to external files for over 100 subjects
+            </li>
+            <li>
+              Built a Python data analysis pipeline to process and visualize
+              gaze metrics across trials and subjects
+            </li>
+            <li>
+              Programmed a study that was presented to the Vision Sciences
+              Society with a principal investigator
+            </li>
+          </ul>
+          <p class="button-hover">Python</p>
+          <p class="button-hover">Matlab</p>
+        </div>
       </div>
       <div class="tab-panel">
         <div class="experience-box">
-        <h2>Student Assistant @ CEC Office of Compliance, Assistance & Enforcement</h2>
-        <p>MAY 2023 - JAN 2025</p>
-        <ul>
-          <li>
-            Developed a a Python web scraping tool to automate data collection from product pages, dynamically adapting to product types and page structures
-          </li>
-          <li>
-            Built a Flask-based interface to allow users to input URLs and trigger scraping via a user-friendly web app</li>
-          <li>
-            Automated end-to-end data extraction and display, reducing manual input and enabling scalable product tracking</li>
-        </ul>
-        <p class="button-hover">Python</p>
+          <h2>
+            Student Assistant @ CEC Office of Compliance, Assistance &
+            Enforcement
+          </h2>
+          <p>MAY 2023 - JAN 2025</p>
+          <ul>
+            <li>
+              Developed a a Python web scraping tool to automate data collection
+              from product pages, dynamically adapting to product types and page
+              structures
+            </li>
+            <li>
+              Built a Flask-based interface to allow users to input URLs and
+              trigger scraping via a user-friendly web app
+            </li>
+            <li>
+              Automated end-to-end data extraction and display, reducing manual
+              input and enabling scalable product tracking
+            </li>
+          </ul>
+          <p class="button-hover">Python</p>
+        </div>
       </div>
-      </div>
-    </div>
-
+    </section>
 
     <!------------ PROJECTS  ------------>
-    <h1>Projects</h1>
-    <div class="container">
-      <div class="project-box">
-        <h2>Colony 19 (2025)</h2>
-        <h3>Steam Published VR game</h3>
-        <p><strong>Technical Developer</strong></p>
-        <ul>
-          <li>
-            Developed procedural hand-grabbing animation in Unity that adapted
-            to various 3D surfaces and models
-          </li>
-          <li>
-            Designed accessibility game modes for a climbing-focused game and
-            in-game settings for inclusive gameplay
-          </li>
-          <li>
-            Implemented a dynamic ambient audio management system with 3D
-            spatial sounds
-          </li>
-        </ul>
-        <p class="button-hover">Unity C#</p>
-        <p class="button-hover">VR</p>
-        <p>
-          <a
-            href="https://store.steampowered.com/app/3674970/Colony_19/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="button-link"
-            >Steam Page</a
-          >
-        </p>
+    <section id="projects">
+      <h1>Projects</h1>
+      <div class="container">
+        <div class="project-box">
+          <h2>
+            <a href="colony19.html" style="color: #3c4a6e">Colony 19 (2025)</a>
+          </h2>
+          <h3>Steam Published VR game</h3>
+          <p><strong>Technical Developer</strong></p>
+          <ul>
+            <li>
+              Developed procedural hand-grabbing animation in Unity that adapted
+              to various 3D surfaces and models
+            </li>
+            <li>
+              Designed accessibility game modes for a climbing-focused game and
+              in-game settings for inclusive gameplay
+            </li>
+            <li>
+              Implemented a dynamic ambient audio management system with 3D
+              spatial sounds
+            </li>
+          </ul>
+          <p class="button-hover">Unity C#</p>
+          <p class="button-hover">VR</p>
+          <p class="awards">
+            🏆1st Place in Best Tech Innovation / Execution <br />
+            <i>(UCSC Computer Science Game Design Capstone Series)</i>
+          </p>
+          <p class="awards">
+            🏆3rd Place in Best Gameplay Design & Fun Factor <br />
+            <i> (UCSC Computer Science Game Design Capstone Series) </i>
+          </p>
+          <p>
+            <a
+              href="https://store.steampowered.com/app/3674970/Colony_19/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button-link"
+              >Steam Page</a
+            >
+          </p>
+        </div>
+        <div class="project-box">
+          <h2>
+            <a style="color: #3c4a6e" href="shooter.html"
+              >Online Co-Op Survival Shooter (2025)</a
+            >
+          </h2>
+          <!-- <h2>Steam Published VR game</h2> -->
+          <p><strong>Tools Lead</strong></p>
+          <ul>
+            <li>
+              Implemented online multiplayer using Unity Netcode for GameObjects
+              and Relay server for smooth synchronization of the game state
+            </li>
+            <li>
+              Built a weapon system with a class hierarchy to easily add new
+              weapons, and designed an in-game UI
+            </li>
+            <li>
+              Developed a wave progression system featuring escalating
+              difficulty and random spawn patterns
+            </li>
+          </ul>
+          <p class="button-hover">Unity C#</p>
+          <p class="button-hover">Multiplayer</p>
+        </div>
       </div>
-      <div class="project-box">
-        <h2>Online Co-Op Survival Shooter (2025)</h2>
-        <!-- <h2>Steam Published VR game</h2> -->
-        <p><strong>Tools Lead</strong></p>
-        <ul>
-          <li>
-            Implemented online multiplayer using Unity Netcode for GameObjects
-            and Relay server for smooth synchronization of the game state
-          </li>
-          <li>
-            Built a weapon system with a class hierarchy to easily add new
-            weapons, and designed an in-game UI
-          </li>
-          <li>
-            Developed a wave progression system featuring escalating difficulty
-            and random spawn patterns
-          </li>
-        </ul>
-        <p class="button-hover">Unity C#</p>
-        <p class="button-hover">Multiplayer</p>
-      </div>
-    </div>
+    </section>
     <script src="script.js"></script>
   </body>
 </html>
