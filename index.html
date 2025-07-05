@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <!------------ EXPERIENCE  ------------>
+    <h1>Experience</h1>
+    <div class="tabs">
+      <button class="tab-button active" onclick="showTab(0)">
+        <span class="tab-title">VR Developer Intern</span><br />
+        <span class="tab-sub">@ Immergo Labs</span>
+      </button>
+      <button class="tab-button" onclick="showTab(1)">
+        <span class="tab-title">Research Assistant</span><br />
+        <span class="tab-sub">@ High Level Perception Lab</span>
+      </button>
+      <button class="tab-button" onclick="showTab(2)">
+        <span class="tab-title">Student Assistant</span><br />
+        <span class="tab-sub">@ CEC Office of Compliance, Assistance & Enforcement</span>
+      </button>
+    </div>
+
+    <div class="tab-content">
+      <div class="tab-panel active">
+        <div class="experience-box">
+        <h2>VR Developer Intern @ Immergo Labs</h2>
+        <p>JAN 2025 - PRESENT</p>
+        <ul>
+          <li>
+            Built a Unity-based VR tool that enables users to create, save, and
+            share custom physical therapy programs utilizing JSON-based exercise
+            recordings
+          </li>
+          <li>
+            Implemented an advanced waypoint authoring system to allow creators
+            to design and visualize motion paths
+          </li>
+          <li>
+            Developed diverse game modes to cater to varying user preferences,
+            featuring different environments, rewards, and difficulty levels
+          </li>
+          <li>
+            Designed an intuitive VR user interface tailored to accommodate
+            users with various mobility challenges
+          </li>
+        </ul>
+        <p class="button-hover">Unity C#</p>
+        <p class="button-hover">VR</p>
+      </div>
+    </div>
+      </div>
+      <div class="tab-panel">
+        <div class="experience-box">
+        <h2>Research Assistant @ High Level Perception Lab</h2>
+        <p>APR 2023 - PRESENT</p>
+        <ul>
+          <li>
+            Developed a MATLAB-based experiment that presents visual stimuli at different orientations and integrated real-time eye-tracking via the Gazepoint API
+          </li>
+          <li>
+            Implemented calibration, gaze recording, and automatic data logging to external files for over 100 subjects</li>
+          <li>
+            Built a Python data analysis pipeline to process and visualize gaze metrics across trials and subjects</li>
+          <li>
+            Programmed a study that was presented to the Vision Sciences Society with a principal investigator
+          </li>
+        </ul>
+        <p class="button-hover">Python</p>
+        <p class="button-hover">Matlab</p>
+      </div>
+      </div>
+      <div class="tab-panel">
+        <div class="experience-box">
+        <h2>Student Assistant @ CEC Office of Compliance, Assistance & Enforcement</h2>
+        <p>MAY 2023 - JAN 2025</p>
+        <ul>
+          <li>
+            Developed a a Python web scraping tool to automate data collection from product pages, dynamically adapting to product types and page structures
+          </li>
+          <li>
+            Built a Flask-based interface to allow users to input URLs and trigger scraping via a user-friendly web app</li>
+          <li>
+            Automated end-to-end data extraction and display, reducing manual input and enabling scalable product tracking</li>
+        </ul>
+        <p class="button-hover">Python</p>
+      </div>
+      </div>
+    </div>
+
+
+    <!------------ PROJECTS  ------------>
+    <h1>Projects</h1>
+    <div class="container">
+      <div class="project-box">
+        <h2>Colony 19 (2025)</h2>
+        <h3>Steam Published VR game</h3>
+        <p><strong>Technical Developer</strong></p>
+        <ul>
+          <li>
+            Developed procedural hand-grabbing animation in Unity that adapted
+            to various 3D surfaces and models
+          </li>
+          <li>
+            Designed accessibility game modes for a climbing-focused game and
+            in-game settings for inclusive gameplay
+          </li>
+          <li>
+            Implemented a dynamic ambient audio management system with 3D
+            spatial sounds
+          </li>
+        </ul>
+        <p class="button-hover">Unity C#</p>
+        <p class="button-hover">VR</p>
+        <p>
+          <a
+            href="https://store.steampowered.com/app/3674970/Colony_19/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button-link"
+            >Steam Page</a
+          >
+        </p>
+      </div>
+      <div class="project-box">
+        <h2>Online Co-Op Survival Shooter (2025)</h2>
+        <!-- <h2>Steam Published VR game</h2> -->
+        <p><strong>Tools Lead</strong></p>
+        <ul>
+          <li>
+            Implemented online multiplayer using Unity Netcode for GameObjects
+            and Relay server for smooth synchronization of the game state
+          </li>
+          <li>
+            Built a weapon system with a class hierarchy to easily add new
+            weapons, and designed an in-game UI
+          </li>
+          <li>
+            Developed a wave progression system featuring escalating difficulty
+            and random spawn patterns
+          </li>
+        </ul>
+        <p class="button-hover">Unity C#</p>
+        <p class="button-hover">Multiplayer</p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
