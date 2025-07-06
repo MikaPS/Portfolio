@@ -69,25 +69,25 @@
         <p><strong> SEP 2021 - JUN 2025 | GPA: 3.97</strong></p>
         <p><strong> Relevant Courses: </strong></p>
         <p style="text-align: left; color: #2b395c">
-          Game Development: Game Production Studio, Game Design Studio, Game
-          Systems, Game Technologies
-        </p>
-        <p style="text-align: left; color: #2b395c">
           Software Engineering: Database Systems I, Artificial Intelligence,
           Game AI, Game Development Patterns, Advanced Programming, Data Structs
           & Algorithms
+        </p>
+        <p style="text-align: left; color: #2b395c">
+          Game Development: Game Production Studio, Game Design Studio, Game
+          Systems, Game Technologies
         </p>
 
         <!-- <p class="button-hover">Unity C#</p>
       <p class="button-hover">VR</p> -->
         <p class="awards">
-          🏆Dean's Honors
+          <strong>🏆Dean's Honors</strong>
           <i>(Won 11 Times)</i><br />
           Awarded to students with a quarterly GPA above 3.83 who are at the top
           15% of their class.
         </p>
         <p class="awards">
-          🏆College Scholars Program <br />
+          <strong>🏆College Scholars Program </strong><br />
           A selective honors program that allows outstanding students to explore
           research early in their career. <br />
           Each cohort has between 20-25 students out of a class of about 3,000
@@ -100,18 +100,27 @@
     <!------------ EXPERIENCE  ------------>
     <section id="experience">
       <h1>Experience</h1>
-      <div class="tabs">
-        <button class="tab-button active" onclick="showTab(0)">
+      <div class="tabs" id="experience-tabs">
+        <button
+          class="tab-button active"
+          onclick="showTab(0, 'experience-tabs', 'experience-content')"
+        >
           <span class="tab-title"
             >Unity Coding Intern => VR Developer Intern</span
           ><br />
           <span class="tab-sub">@ Immergo Labs</span>
         </button>
-        <button class="tab-button" onclick="showTab(1)">
+        <button
+          class="tab-button"
+          onclick="showTab(1, 'experience-tabs', 'experience-content')"
+        >
           <span class="tab-title">Research Assistant</span><br />
           <span class="tab-sub">@ High Level Perception Lab</span>
         </button>
-        <button class="tab-button" onclick="showTab(2)">
+        <button
+          class="tab-button"
+          onclick="showTab(2, 'experience-tabs', 'experience-content')"
+        >
           <span class="tab-title">Student Assistant</span><br />
           <span class="tab-sub"
             >@ CEC Office of Compliance, Assistance & Enforcement</span
@@ -119,7 +128,7 @@
         </button>
       </div>
 
-      <div class="tab-content">
+      <div class="tab-content" id="experience-content">
         <div class="tab-panel active">
           <div class="experience-box">
             <h2>Unity Coding Intern => VR Developer Intern @ Immergo Labs</h2>
@@ -146,59 +155,113 @@
             </ul>
             <p class="button-hover">Unity C#</p>
             <p class="button-hover">VR</p>
+            <p class="button-wrapper">
+              <a
+                href="https://www.immergolabs.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="small-button-link"
+                >↗️</a
+              >
+            </p>
           </div>
         </div>
-      </div>
-      <div class="tab-panel">
-        <div class="experience-box">
-          <h2>Research Assistant @ High Level Perception Lab</h2>
-          <p>APR 2023 - PRESENT</p>
-          <ul>
-            <li>
-              Developed a MATLAB-based experiment that presents visual stimuli
-              at different orientations and integrated real-time eye-tracking
-              via the Gazepoint API
-            </li>
-            <li>
-              Implemented calibration, gaze recording, and automatic data
-              logging to external files for over 100 subjects
-            </li>
-            <li>
-              Built a Python data analysis pipeline to process and visualize
-              gaze metrics across trials and subjects
-            </li>
-            <li>
-              Programmed a study that was presented to the Vision Sciences
-              Society with a principal investigator
-            </li>
-          </ul>
-          <p class="button-hover">Python</p>
-          <p class="button-hover">Matlab</p>
+        <div class="tab-panel">
+          <div class="experience-box">
+            <h2>Research Assistant @ High Level Perception Lab</h2>
+            <p>APR 2023 - PRESENT</p>
+            <p>
+              Volunteered at a UCSC lab led by Professor Davidenko that focuses
+              on how "top down" processes can impact human perception using
+              computational and behavioral approaches. In particular, I worked
+              with Prof. Davidenko to understand how we perceive faces and the
+              phenomenon known as the Upper Eye Bias.
+            </p>
+            <ul>
+              <li>
+                Developed a MATLAB-based experiment that presents visual stimuli
+                at different orientations and integrated real-time eye-tracking
+                via the Gazepoint API
+              </li>
+              <li>
+                Implemented calibration, gaze recording, and automatic data
+                logging to external files for over 100 subjects
+              </li>
+              <li>
+                Built a Python data analysis pipeline to process gaze metrics
+                across trials and subjects, reducing analysis time by ~98% —
+                from 1 hour of manual analysis per participant to under 2
+                minutes for all participants
+              </li>
+              <li>
+                Programmed a study that was presented to the Vision Sciences
+                Society with a principal investigator
+              </li>
+            </ul>
+
+            <p class="button-hover">Python</p>
+            <p class="button-hover">Matlab</p>
+            <p class="button-wrapper">
+              <a
+                href="https://davidenko.sites.ucsc.edu/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="small-button-link"
+                >↗️</a
+              >
+            </p>
+            <p>
+              <a
+                href="https://jov.arvojournals.org/article.aspx?articleid=2801092"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button-link"
+                >Poster Abstract</a
+              >
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="tab-panel">
-        <div class="experience-box">
-          <h2>
-            Student Assistant @ CEC Office of Compliance, Assistance &
-            Enforcement
-          </h2>
-          <p>MAY 2023 - JAN 2025</p>
-          <ul>
-            <li>
-              Developed a a Python web scraping tool to automate data collection
-              from product pages, dynamically adapting to product types and page
-              structures
-            </li>
-            <li>
-              Built a Flask-based interface to allow users to input URLs and
-              trigger scraping via a user-friendly web app
-            </li>
-            <li>
-              Automated end-to-end data extraction and display, reducing manual
-              input and enabling scalable product tracking
-            </li>
-          </ul>
-          <p class="button-hover">Python</p>
+        <div class="tab-panel">
+          <div class="experience-box">
+            <h2>
+              Student Assistant @ CEC Office of Compliance, Assistance &
+              Enforcement
+            </h2>
+            <p>MAY 2023 - JAN 2025</p>
+            <p>
+              Worked part time at a California Energy Comission office that
+              ensures that products comply with energy and water standards.
+            </p>
+            <ul>
+              <li>
+                Developed a a Python web scraping tool to automate data
+                collection from product pages, dynamically adapting to product
+                types and page structures
+              </li>
+              <li>
+                Built a Flask-based interface to allow users to input URLs and
+                trigger scraping via a user-friendly web app
+              </li>
+              <li>
+                Automated end-to-end data extraction and display, reducing
+                manual input and enabling scalable product tracking
+              </li>
+              <li>
+                Verified data and reviewed test reports submitted to the
+                Modernized Appliance Efficiency Database System (MAEDbS)
+              </li>
+            </ul>
+            <p class="button-hover">Python</p>
+            <p class="button-wrapper">
+              <a
+                href="https://www.energy.ca.gov/about/divisions-and-offices/office-compliance-assistance-and-enforcement"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="small-button-link"
+                >↗️</a
+              >
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -206,71 +269,214 @@
     <!------------ PROJECTS  ------------>
     <section id="projects">
       <h1>Projects</h1>
-      <div class="container">
-        <div class="project-box">
-          <h2>
-            <a href="colony19.html" style="color: #3c4a6e">Colony 19 (2025)</a>
-          </h2>
-          <h3>Steam Published VR game</h3>
-          <p><strong>Technical Developer</strong></p>
-          <ul>
-            <li>
-              Developed procedural hand-grabbing animation in Unity that adapted
-              to various 3D surfaces and models
-            </li>
-            <li>
-              Designed accessibility game modes for a climbing-focused game and
-              in-game settings for inclusive gameplay
-            </li>
-            <li>
-              Implemented a dynamic ambient audio management system with 3D
-              spatial sounds
-            </li>
-          </ul>
-          <p class="button-hover">Unity C#</p>
-          <p class="button-hover">VR</p>
-          <p class="awards">
-            🏆1st Place in Best Tech Innovation / Execution <br />
-            <i>(UCSC Computer Science Game Design Capstone Series)</i>
-          </p>
-          <p class="awards">
-            🏆3rd Place in Best Gameplay Design & Fun Factor <br />
-            <i> (UCSC Computer Science Game Design Capstone Series) </i>
-          </p>
-          <p>
-            <a
-              href="https://store.steampowered.com/app/3674970/Colony_19/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="button-link"
-              >Steam Page</a
-            >
-          </p>
+      <div class="tabs" id="project-tabs">
+        <button
+          class="tab-button active"
+          onclick="showTab(0, 'project-tabs', 'project-content')"
+        >
+          <span class="tab-title">Unity C#</span><br />
+        </button>
+        <button
+          class="tab-button"
+          onclick="showTab(1, 'project-tabs', 'project-content')"
+        >
+          <span class="tab-title">TypeScript</span><br />
+          <!-- <span class="tab-sub">+ Phaser framework</span> -->
+        </button>
+      </div>
+
+      <div class="tab-content" id="project-content">
+        <div class="tab-panel active">
+          <div class="container">
+            <div class="project-box">
+              <h2>
+                <a href="colony19.html" style="color: #3c4a6e"
+                  >Colony 19 (2025)</a
+                >
+              </h2>
+              <h3>Steam Published VR game</h3>
+              <p><strong>Technical Developer</strong></p>
+              <ul>
+                <li>
+                  Developed procedural hand-grabbing animation in Unity that
+                  adapted to various 3D surfaces and models
+                </li>
+                <li>
+                  Designed accessibility game modes for a climbing-focused game
+                  and in-game settings for inclusive gameplay
+                </li>
+                <li>
+                  Implemented a dynamic ambient audio management system with 3D
+                  spatial sounds
+                </li>
+              </ul>
+              <p class="button-hover">Unity C#</p>
+              <p class="button-hover">VR</p>
+              <p class="awards">
+                🏆1st Place in Best Tech Innovation / Execution <br />
+                <i>(UCSC Computer Science Game Design Capstone Series)</i>
+              </p>
+              <p class="awards">
+                🏆3rd Place in Best Gameplay Design & Fun Factor <br />
+                <i> (UCSC Computer Science Game Design Capstone Series) </i>
+              </p>
+              <p>
+                <a
+                  href="https://store.steampowered.com/app/3674970/Colony_19/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button-link"
+                  >Steam Page</a
+                >
+              </p>
+            </div>
+            <div class="project-box">
+              <h2>
+                <a style="color: #3c4a6e" href="shooter.html"
+                  >Online Co-Op Survival Shooter (2025)</a
+                >
+              </h2>
+              <!-- <h2>Steam Published VR game</h2> -->
+              <p><strong>Tools Lead</strong></p>
+              <ul>
+                <li>
+                  Implemented online multiplayer using Unity Netcode for
+                  GameObjects and Relay server for smooth synchronization of the
+                  game state
+                </li>
+                <li>
+                  Built a weapon system with a class hierarchy to easily add new
+                  weapons, and designed an in-game UI
+                </li>
+                <li>
+                  Developed a wave progression system featuring escalating
+                  difficulty and random spawn patterns
+                </li>
+              </ul>
+              <p class="button-hover">Unity C#</p>
+              <p class="button-hover">Multiplayer</p>
+              <p class="awards">
+                🏆"FUN! Really funny engaging multiplayer game that could be
+                rage indusing but also a good lesson on teamwork"
+                <i> - Playtester </i>
+              </p>
+              <p class="awards">🏆#1 Contributor on GitHub from a team of 8</p>
+              <p class="button-wrapper">
+                <a
+                  href="https://github.com/zchaplin/ShooterIHardlyKnowHer"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button-link"
+                  >GitHub</a
+                >
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="project-box">
-          <h2>
-            <a style="color: #3c4a6e" href="shooter.html"
-              >Online Co-Op Survival Shooter (2025)</a
-            >
-          </h2>
-          <!-- <h2>Steam Published VR game</h2> -->
-          <p><strong>Tools Lead</strong></p>
-          <ul>
-            <li>
-              Implemented online multiplayer using Unity Netcode for GameObjects
-              and Relay server for smooth synchronization of the game state
-            </li>
-            <li>
-              Built a weapon system with a class hierarchy to easily add new
-              weapons, and designed an in-game UI
-            </li>
-            <li>
-              Developed a wave progression system featuring escalating
-              difficulty and random spawn patterns
-            </li>
-          </ul>
-          <p class="button-hover">Unity C#</p>
-          <p class="button-hover">Multiplayer</p>
+        <div class="tab-panel">
+          <div class="container">
+            <div class="project-box">
+              <h2>Garden Simulator (2023)</h2>
+              <h3>Multi-Language Offline-Enabled App</h3>
+              <p><strong>Engine Lead</strong></p>
+              <ul>
+                <li>
+                  Utilized Vite PWA plug-in to support offline web and mobile
+                  play
+                </li>
+                <li>
+                  Incorporated internal and external DSLs used for level design
+                  and save mechanics
+                </li>
+                <li>
+                  Enabled localization to 3 languages with a switchable
+                  internationalization systems
+                </li>
+              </ul>
+              <p class="button-hover">TypeScript</p>
+              <p class="awards">
+                🏆 Recognized by professor as a standout project in the class.
+                Code was showcased with the praise:<br />
+                <i
+                  >“I like the way you think—this is exactly how I would have
+                  done it."</i
+                >
+              </p>
+              <p class="button-wrapper">
+                <a
+                  href="https://github.com/MikaPS/GardenSimulator2023/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button-link"
+                  >GitHub</a
+                >
+              </p>
+              <p class="button-wrapper">
+                <a
+                  href="https://mikaps.github.io/GardenSimulator2023/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button-link"
+                  >Live Project</a
+                >
+              </p>
+            </div>
+            <div class="project-box">
+              <h2>
+                <a style="color: #3c4a6e" href="shooter.html"
+                  >Cross-Cultural Risk Perception Game (2024)</a
+                >
+              </h2>
+              <p><strong>Solo Developer</strong></p>
+              <ul>
+                <li>
+                  Developed an interactive web-based game using TypeScript,
+                  modeling real-world risk-taking behaviors across cultures
+                </li>
+                <li>
+                  Integrated academic research into gameplay design, simplifying
+                  complex behavioral concepts into accessible mechanics
+                </li>
+                <li>
+                  Compared in-game choices to patterns in academic literature
+                  and provided personalized feedback mapping players' behavior
+                  to cultural risk profiles
+                </li>
+              </ul>
+              <p class="button-hover">TypeScript</p>
+              <p class="awards">
+                🏆 Selected by the professor as an exemplary project to be
+                showcased in future seminar cohorts
+              </p>
+              <p class="button-wrapper">
+                <a
+                  href="https://github.com/MikaPS/Culture-Cognition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button-link"
+                  >GitHub</a
+                >
+              </p>
+              <p class="button-wrapper">
+                <a
+                  href="https://mikaps.github.io/Culture-Cognition/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button-link"
+                  >Live Project</a
+                >
+              </p>
+              <p class="button-wrapper">
+                <a
+                  href="https://docs.google.com/document/d/1_RCh9lXEDKRd4QtPLgeqV1whRu4vUrF-NBowyJgFwNA/edit?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button-link"
+                  >Academic Paper</a
+                >
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

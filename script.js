@@ -1,6 +1,9 @@
-function showTab(index) {
-  const panels = document.querySelectorAll(".tab-panel");
-  const buttons = document.querySelectorAll(".tab-button");
+function showTab(index, buttonId, panelId) {
+  const panelGroup = document.getElementById(panelId);
+  const buttonGroup = document.getElementById(buttonId);
+
+  const panels = panelGroup.querySelectorAll(".tab-panel");
+  const buttons = buttonGroup.querySelectorAll(".tab-button");
 
   panels.forEach((panel) => panel.classList.remove("active"));
   buttons.forEach((button) => button.classList.remove("active"));

@@ -234,7 +234,30 @@ a.button-link:focus {
   outline: none;
 }
 
+a.small-button-link {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #3c4a6e;
+  color: #e6ccb2;
+  border-radius: 10px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+a.small-button-link:hover,
+a.small-button-link:focus {
+  background-color: #3f5ba3;
+  color: #ede0d4;
+  outline: none;
+}
+
 /* ----- SKILLS ----- */
+p.button-wrapper {
+  display: inline-block;
+}
+
 p.button-hover {
   display: inline-block;
   padding: 5px 10px;
