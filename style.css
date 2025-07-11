@@ -218,6 +218,7 @@ body h1 {
 a.button-link {
   display: inline-block;
   padding: 10px 20px;
+  margin: 5px;
   background-color: #3c4a6e;
   color: #e6ccb2;
   border-radius: 10px;
@@ -268,12 +269,6 @@ p.button-hover {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-p.button-hover:hover,
-p.button-hover:focus {
-  background-color: #3f5ba3;
-  color: #ede0d4;
-}
-
 /* ----- AWARDS ------ */
 p.awards {
   display: inline-block;
@@ -284,13 +279,6 @@ p.awards {
   font-weight: 400;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-
-p.awards:hover,
-p.awards:focus {
-  background-color: #3f5ba3;
-  color: #ede0d4;
-}
-
 
 /* ---- NAV BAR ---- */
 .navbar {
