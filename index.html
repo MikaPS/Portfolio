@@ -27,6 +27,175 @@
     <title>Portfolio</title>
   </head>
   <body>
+    <script>
+      async function loadPortfolio() {
+        const response = await fetch("data.json");
+        const data = await response.json();
+
+        // ---- EXPERIENCES ----
+        const tabs = document.getElementById("experience-tabs");
+        const content = document.getElementById("experience-content");
+        data.experience.forEach((exp, index) => {
+          // ---- CREATE TAB BUTTON ----
+          const button = document.createElement("button");
+          button.className = "tab-button" + (index === 0 ? " active" : "");
+          button.setAttribute(
+            "onclick",
+            `showTab(${index}, 'experience-tabs', 'experience-content')`
+          );
+          button.innerHTML = `
+                        <span class="tab-title">${exp.role}</span><br/>
+                        <span class="tab-sub">@ ${exp.company}</span>
+                      `;
+          tabs.appendChild(button);
+
+          // ---- CREATE TAB PANEL ----
+          const panel = document.createElement("div");
+          panel.className = "tab-panel" + (index === 0 ? " active" : "");
+          panel.innerHTML = `
+                  <div class="experience-box">
+                    <h2>${exp.role} @ ${exp.company}</h2>
+                    <p>${exp.date}</p>
+                    ${exp.description ? `<p>${exp.description}</p>` : ""}
+                    <ul>
+                      ${exp.bullets.map((p) => `<li>${p}</li>`).join("")}
+                    </ul>
+                    ${exp.tags
+                      .map((t) => `<p class="button-hover"> ${t} </p>`)
+                      .join("")}
+                    <p class="button-wrapper">
+                      <a href="${
+                        exp.link
+                      }" target="_blank" rel="noopener noreferrer" class="small-button-link">↗️</a>
+                    </p>
+                    ${
+                      exp.big_link
+                        ? `<p>
+                        <a
+                          href="${exp.big_link.link}" target="_blank" rel="noopener noreferrer" class="button-link"
+                          >${exp.big_link.name}</a
+                        >
+                    </p>`
+                        : ""
+                    }
+                  </div>
+                `;
+          content.appendChild(panel);
+        });
+
+        // ---- PROJECTS ----
+        const proj_tabs = document.getElementById("project-tabs");
+        const proj_content = document.getElementById("project-content");
+
+        let tabIndex = 0; // global counter for tabs
+
+        data.projects.forEach((proj_group, langIndex) => {
+          Object.keys(proj_group.language).forEach((languageName, tabIndex) => {
+            const langObj = proj_group.language[languageName]; // always has Projects and Prototypes
+            const bigProjects = langObj.Projects || [];
+            const prototypes = langObj.Prototypes || [];
+
+            // ---- TAB BUTTON ----
+            const button = document.createElement("button");
+            button.className = "tab-button" + (tabIndex === 0 ? " active" : "");
+            button.setAttribute(
+              "onclick",
+              `showTab(${tabIndex}, 'project-tabs', 'project-content')`
+            );
+            button.innerHTML = `<span class="tab-title">${languageName}</span><br/>`;
+            proj_tabs.appendChild(button);
+
+            // ---- TAB PANEL ----
+            const panel = document.createElement("div");
+            panel.className = "tab-panel" + (tabIndex === 0 ? " active" : "");
+            const container = document.createElement("div");
+            container.className = "container";
+
+            const textContainer = document.createElement("div");
+            textContainer.className = "small_container";
+
+            const prototypesContainer = document.createElement("div");
+            prototypesContainer.className = "container";
+
+            // Add big projects
+            bigProjects.forEach((proj) =>
+              container.appendChild(createProjectBox(proj, "project-box"))
+            );
+
+            // Add prototypes if any
+            if (prototypes.length > 0) {
+              const protoHeader = document.createElement("h2");
+              protoHeader.innerHTML = `Prototypes`;
+              protoHeader.className = "prototype-header";
+
+              textContainer.appendChild(protoHeader);
+
+              prototypes.forEach((proj) =>
+                prototypesContainer.appendChild(
+                  createProjectBox(proj, "prototype-box")
+                )
+              );
+            }
+            panel.appendChild(container);
+            panel.appendChild(textContainer);
+            panel.appendChild(prototypesContainer);
+            proj_content.appendChild(panel);
+          });
+        });
+      }
+
+      function createProjectBox(proj, className) {
+        const box = document.createElement("div");
+        box.className = className;
+
+        box.innerHTML = `
+        <h2>${
+          proj.title_link
+            ? `<a href="${proj.title_link}" style="color: #3c4a6e">${proj.title}</a>`
+            : proj.title
+        }</h2>
+        ${proj.sub_title ? `<h3>${proj.sub_title}</h3>` : ""}
+        ${proj.role ? `<p><strong>${proj.role}</strong></p>` : ""}
+        ${proj.description ? `<p>${proj.description}</p>` : ""}
+        <ul>${
+          proj.bullets ? proj.bullets.map((b) => `<li>${b}</li>`).join("") : ""
+        }</ul>
+        ${
+          proj.tags
+            ? proj.tags.map((t) => `<p class="button-hover">${t}</p>`).join("")
+            : ""
+        }
+        ${
+          proj.awards
+            ? proj.awards
+                .map(
+                  (a) =>
+                    `<p class="awards">${a.name}<br/><i>${a.description}</i></p>`
+                )
+                .join("")
+            : ""
+        }
+        ${
+          proj.link
+            ? `<p class="button-wrapper"><a href="${proj.link.link}" target="_blank" rel="noopener noreferrer" class="button-link">${proj.link.name}</a></p>`
+            : ""
+        }
+        ${
+          proj.links
+            ? proj.links
+                .map(
+                  (l) =>
+                    `<p class="button-wrapper"><a href="${l.link}" target="_blank" rel="noopener noreferrer" class="button-link">${l.name}</a></p>`
+                )
+                .join("")
+            : ""
+        }
+      `;
+        return box;
+      }
+
+      loadPortfolio();
+    </script>
     <nav class="navbar">
       <div class="menu-toggle" onclick="toggleMenu()">
         <span></span>
@@ -110,9 +279,6 @@
           Game Development: Game Production Studio, Game Design Studio, Game
           Systems, Game Technologies
         </p>
-
-        <!-- <p class="button-hover">Unity C#</p>
-      <p class="button-hover">VR</p> -->
         <p class="awards">
           <strong>🏆Summa Cum Laude</strong>
           Highest honors in both my majors, awarded to top 1% of the class.
@@ -134,437 +300,18 @@
       </div>
     </section>
 
-    <!------------ EXPERIENCE  ------------>
+    <!-- ---------- EXPERIENCE  ---------->
     <section id="experience">
       <h1>Experience</h1>
-      <div class="tabs" id="experience-tabs">
-        <button
-          class="tab-button active"
-          onclick="showTab(0, 'experience-tabs', 'experience-content')"
-        >
-          <span class="tab-title">Virtual Reality Developer Intern</span><br />
-          <span class="tab-sub">@ Fogarty Innovation </span>
-        </button>
-        <button
-          class="tab-button"
-          onclick="showTab(1, 'experience-tabs', 'experience-content')"
-        >
-          <span class="tab-title">Unity Coding Intern</span><br />
-          <span class="tab-sub">@ Immergo Labs</span>
-        </button>
-        <button
-          class="tab-button"
-          onclick="showTab(2, 'experience-tabs', 'experience-content')"
-        >
-          <span class="tab-title">Research Assistant</span><br />
-          <span class="tab-sub">@ High Level Perception Lab</span>
-        </button>
-        <button
-          class="tab-button"
-          onclick="showTab(3, 'experience-tabs', 'experience-content')"
-        >
-          <span class="tab-title">Student Assistant</span><br />
-          <span class="tab-sub"
-            >@ CEC Office of Compliance, Assistance & Enforcement</span
-          >
-        </button>
-      </div>
-
-      <div class="tab-content" id="experience-content">
-        <div class="tab-panel active">
-          <div class="experience-box">
-            <h2>Virtual Reality Developer Intern</h2>
-            <p>JUN 2025 - AUG 2025</p>
-            <ul>
-              <li>
-                Developed a Unity-based game (C#) for VR/MR with data logging
-                that serialized states into JSON
-              </li>
-              <li>
-                Implemented procedural object trajectories using spline
-                algorithms, combined with object pooling to optimize performance
-                and maintain smooth 60+ FPS performance
-              </li>
-              <li>
-                Managed the full development cycle from prototype to playtests
-                to polish, iterating based on player feedback
-              </li>
-              <li>
-                Implemented event-driven feedback system linking player actions
-                to animation and UI updates, supporting adaptive difficulty
-                adjustments
-              </li>
-            </ul>
-            <p class="button-hover">Unity C#</p>
-            <p class="button-hover">VR</p>
-            <p class="button-wrapper">
-              <a
-                href="https://www.immergolabs.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="small-button-link"
-                >↗️</a
-              >
-            </p>
-          </div>
-        </div>
-        <div class="tab-panel">
-          <div class="experience-box">
-            <h2>Unity Coding Intern @ Immergo Labs</h2>
-            <p>JUN 2024 - JUN 2025</p>
-            <ul>
-              <li>
-                Built a Unity-based VR tool that enables users to create, save,
-                and share custom physical therapy programs
-              </li>
-              <li>
-                Implemented a JSON-based data storage system on AWS S3 with
-                versioning to reduce redundant uploads
-              </li>
-              <li>
-                Implemented an advanced waypoint authoring system to allow
-                creators to design and visualize motion paths
-              </li>
-              <li>
-                Developed diverse game modes to cater to varying user
-                preferences, featuring different environments, rewards, and
-                difficulty levels
-              </li>
-              <li>
-                Designed an intuitive VR user interface tailored to accommodate
-                users with various mobility challenges
-              </li>
-              <li>
-                Developed a tutorial system as an event-driven state machine
-                that advances dynamically based on user actions
-              </li>
-            </ul>
-            <p class="button-hover">Unity C#</p>
-            <p class="button-hover">VR</p>
-            <p class="button-wrapper">
-              <a
-                href="https://www.immergolabs.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="small-button-link"
-                >↗️</a
-              >
-            </p>
-          </div>
-        </div>
-        <div class="tab-panel">
-          <div class="experience-box">
-            <h2>Research Assistant @ High Level Perception Lab</h2>
-            <p>APR 2023 - PRESENT</p>
-            <p>
-              Volunteered at a UCSC lab led by Professor Davidenko that focuses
-              on how "top down" processes can impact human perception using
-              computational and behavioral approaches. In particular, I worked
-              with Prof. Davidenko to understand how we perceive faces and the
-              phenomenon known as the Upper Eye Bias.
-            </p>
-            <ul>
-              <li>
-                Developed a MATLAB-based experiment that presents visual stimuli
-                at different orientations and integrated real-time eye-tracking
-                via the Gazepoint API
-              </li>
-              <li>
-                Implemented calibration, gaze recording, and automatic data
-                logging to external files for over 100 subjects
-              </li>
-              <li>
-                Built a Python data analysis pipeline to process gaze metrics
-                across trials and subjects, reducing analysis time by ~98% —
-                from 1 hour of manual analysis per participant to under 2
-                minutes for all participants
-              </li>
-              <li>
-                Developed a tool to synchronize timing across multiple datasets
-                to ensure accurate alignment of coordinates
-              </li>
-              <li>
-                Programmed a study that was presented to the Vision Sciences
-                Society with a principal investigator
-              </li>
-            </ul>
-
-            <p class="button-hover">Python</p>
-            <p class="button-hover">Matlab</p>
-            <p class="button-wrapper">
-              <a
-                href="https://davidenko.sites.ucsc.edu/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="small-button-link"
-                >↗️</a
-              >
-            </p>
-            <p>
-              <a
-                href="https://jov.arvojournals.org/article.aspx?articleid=2801092"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="button-link"
-                >Poster Abstract</a
-              >
-            </p>
-          </div>
-        </div>
-        <div class="tab-panel">
-          <div class="experience-box">
-            <h2>
-              Student Assistant @ CEC Office of Compliance, Assistance &
-              Enforcement
-            </h2>
-            <p>MAY 2023 - JAN 2025</p>
-            <p>
-              Worked part time at a California Energy Comission office that
-              ensures that products comply with energy and water standards.
-            </p>
-            <ul>
-              <li>
-                Developed a a Python web scraping tool to automate data
-                collection from product pages, dynamically adapting to product
-                types and page structures
-              </li>
-              <li>
-                Built a Flask-based interface to allow users to input URLs and
-                trigger scraping via a user-friendly web app
-              </li>
-              <li>
-                Automated end-to-end data extraction and display, reducing
-                manual input and enabling scalable product tracking
-              </li>
-              <li>
-                Verified data and reviewed test reports submitted to the
-                Modernized Appliance Efficiency Database System (MAEDbS)
-              </li>
-            </ul>
-            <p class="button-hover">Python</p>
-            <p class="button-wrapper">
-              <a
-                href="https://www.energy.ca.gov/about/divisions-and-offices/office-compliance-assistance-and-enforcement"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="small-button-link"
-                >↗️</a
-              >
-            </p>
-          </div>
-        </div>
-      </div>
+      <div class="tabs" id="experience-tabs"></div>
+      <div class="tab-content" id="experience-content"></div>
     </section>
 
-    <!------------ PROJECTS  ------------>
+    <!-- ---------- PROJECTS  ---------- -->
     <section id="projects">
       <h1>Projects</h1>
-      <div class="tabs" id="project-tabs">
-        <button
-          class="tab-button active"
-          onclick="showTab(0, 'project-tabs', 'project-content')"
-        >
-          <span class="tab-title">Unity C#</span><br />
-        </button>
-        <button
-          class="tab-button"
-          onclick="showTab(1, 'project-tabs', 'project-content')"
-        >
-          <span class="tab-title">TypeScript</span><br />
-          <!-- <span class="tab-sub">+ Phaser framework</span> -->
-        </button>
-      </div>
-
-      <div class="tab-content" id="project-content">
-        <div class="tab-panel active">
-          <div class="container">
-            <div class="project-box">
-              <h2>
-                <a href="colony19.html" style="color: #3c4a6e"
-                  >Colony 19 (2025)</a
-                >
-              </h2>
-              <h3>Steam Published VR game</h3>
-              <p><strong>Technical Developer</strong></p>
-              <ul>
-                <li>
-                  Developed procedural hand-grabbing animation in Unity that
-                  adapted to various 3D surfaces and models
-                </li>
-                <li>
-                  Designed accessibility game modes for a climbing-focused game
-                  and in-game settings for inclusive gameplay
-                </li>
-                <li>
-                  Implemented a dynamic ambient audio management system with 3D
-                  spatial sounds
-                </li>
-              </ul>
-              <p class="button-hover">Unity C#</p>
-              <p class="button-hover">VR</p>
-              <p class="awards">
-                🏆1st Place in Best Tech Innovation / Execution <br />
-                <i>(UCSC Computer Science Game Design Capstone Series)</i>
-              </p>
-              <p class="awards">
-                🏆3rd Place in Best Gameplay Design & Fun Factor <br />
-                <i> (UCSC Computer Science Game Design Capstone Series) </i>
-              </p>
-              <p>
-                <a
-                  href="https://store.steampowered.com/app/3674970/Colony_19/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="button-link"
-                  >Steam Page</a
-                >
-              </p>
-            </div>
-            <div class="project-box">
-              <h2>
-                <a style="color: #3c4a6e" href="shooter.html"
-                  >Online Co-Op Survival Shooter (2025)</a
-                >
-              </h2>
-              <!-- <h2>Steam Published VR game</h2> -->
-              <p><strong>Tools Lead</strong></p>
-              <ul>
-                <li>
-                  Implemented online multiplayer using Unity Netcode for
-                  GameObjects and Relay server for smooth synchronization of the
-                  game state
-                </li>
-                <li>
-                  Built a weapon system with a class hierarchy to easily add new
-                  weapons, and designed an in-game UI
-                </li>
-                <li>
-                  Developed a wave progression system featuring escalating
-                  difficulty and random spawn patterns
-                </li>
-              </ul>
-              <p class="button-hover">Unity C#</p>
-              <p class="button-hover">Multiplayer</p>
-              <p class="awards">
-                🏆"FUN! Really funny engaging multiplayer game that could be
-                rage indusing but also a good lesson on teamwork"
-                <i> - Playtester </i>
-              </p>
-              <p class="awards">🏆#1 Contributor on GitHub from a team of 8</p>
-              <p class="button-wrapper">
-                <a
-                  href="https://github.com/zchaplin/ShooterIHardlyKnowHer"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="button-link"
-                  >GitHub</a
-                >
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="tab-panel">
-          <div class="container">
-            <div class="project-box">
-              <h2>Garden Simulator (2023)</h2>
-              <h3>Multi-Language Offline-Enabled App</h3>
-              <p><strong>Engine Lead</strong></p>
-              <ul>
-                <li>
-                  Utilized Vite PWA plug-in to support offline web and mobile
-                  play
-                </li>
-                <li>
-                  Incorporated internal and external DSLs used for level design
-                  and save mechanics
-                </li>
-                <li>
-                  Enabled localization to 3 languages with a switchable
-                  internationalization systems
-                </li>
-              </ul>
-              <p class="button-hover">TypeScript</p>
-              <p class="awards">
-                🏆 Recognized by professor as a standout project in the class.
-                Code was showcased with the praise:<br />
-                <i
-                  >“I like the way you think—this is exactly how I would have
-                  done it."</i
-                >
-              </p>
-              <p class="button-wrapper">
-                <a
-                  href="https://github.com/MikaPS/GardenSimulator2023/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="button-link"
-                  >GitHub</a
-                >
-              </p>
-              <p class="button-wrapper">
-                <a
-                  href="https://mikaps.github.io/GardenSimulator2023/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="button-link"
-                  >Live Project</a
-                >
-              </p>
-            </div>
-            <div class="project-box">
-              <h2>Cross-Cultural Risk Perception Game (2024)</h2>
-              <p><strong>Solo Developer</strong></p>
-              <ul>
-                <li>
-                  Developed an interactive web-based game using TypeScript,
-                  modeling real-world risk-taking behaviors across cultures
-                </li>
-                <li>
-                  Integrated academic research into gameplay design, simplifying
-                  complex behavioral concepts into accessible mechanics
-                </li>
-                <li>
-                  Compared in-game choices to patterns in academic literature
-                  and provided personalized feedback mapping players' behavior
-                  to cultural risk profiles
-                </li>
-              </ul>
-              <p class="button-hover">TypeScript</p>
-              <p class="awards">
-                🏆 Selected by the professor as an exemplary project to be
-                showcased in future seminar cohorts
-              </p>
-              <p class="button-wrapper">
-                <a
-                  href="https://github.com/MikaPS/Culture-Cognition"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="button-link"
-                  >GitHub</a
-                >
-              </p>
-              <p class="button-wrapper">
-                <a
-                  href="https://mikaps.github.io/Culture-Cognition/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="button-link"
-                  >Live Project</a
-                >
-              </p>
-              <p class="button-wrapper">
-                <a
-                  href="https://docs.google.com/document/d/1_RCh9lXEDKRd4QtPLgeqV1whRu4vUrF-NBowyJgFwNA/edit?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="button-link"
-                  >Academic Paper</a
-                >
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="tabs" id="project-tabs"></div>
+      <div class="tab-content" id="project-content"></div>
     </section>
     <script src="script.js"></script>
   </body>

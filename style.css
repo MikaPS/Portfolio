@@ -16,8 +16,21 @@ body {
     gap: 20px;
     padding: 20px;}
 
+.small_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* gap: 20px; */
+  /* padding: 20px; */
+}
+
 body h1 {
   font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #091c4d; 
+}
+body h1 {
+  font-size: 2.2em;
   margin-bottom: 10px;
   color: #091c4d; 
 }
@@ -128,6 +141,19 @@ body h1 {
     overflow: auto;
   }
 
+.prototype-box {
+    background-color: #e6ccb2;
+    border: 3px solid #ddb892;
+    border-radius: 20px;
+    padding: 10px;
+    flex: 1 1 25%;
+    max-width: 25%;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 1.2em;
+    overflow: auto;
+  }
+
   /* change format if on mobile */
   @media (max-width: 768px) {
     .project-box {
@@ -135,38 +161,47 @@ body h1 {
       max-width: 100%;
       margin: 10px 0;
     }
+    .prototype-box {
+      flex-basis: 100%;
+      max-width: 100%;
+      margin: 10px 0;
+    }
   }
 
-.project-box h2 {
+.project-box h2, .prototype-box h2  {
   font-size: 1.8em;
   margin-bottom: 5px;
   color: #3c4a6e;
 }
 
-.project-box h3 {
+.project-box h3, .prototype-box h3 {
   font-size: 1.4em;
   margin-top: 0px;
   margin-bottom: 0px;
   color: #4f608c;
 }
 
-.project-box p {
+.project-box p, .prototype-box p {
   margin-top: 10px;
   color: #3f5ba3;
 }
 
-.project-box ul {
+.project-box ul, .prototype-box ul {
   padding-left: 25px;
   text-align: left;
   color: #2b395c;
 }
 
-.project-box li {
+.project-box li, .prototype-box li {
   padding-left: 5px;
   margin-bottom: 5px;
   color: #2b395c; 
 }
-
+.prototype-header {
+  /* margin-top: 10px;
+  margin-bottom: 10px; */
+  color: #3c4a6e;
+}
 
 /* ----- EDUCATION ----- */
 .education-box {
@@ -267,6 +302,8 @@ p.button-hover {
   border-radius: 10px;
   font-weight: 400;
   transition: background-color 0.3s ease, color 0.3s ease;
+  margin-right: 5px;
+
 }
 
 /* ----- AWARDS ------ */

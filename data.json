@@ -1,0 +1,262 @@
+{
+  "experience": [
+    {
+      "role": "Virtual Reality Developer Intern",
+      "company": "Fogarty Innovation",
+      "date": "JUN 2025 - AUG 2025",
+      "bullets": [
+        "Developed a Unity-based game (C#) for VR/MR with data logging that serialized states into JSON",
+        "Implemented procedural object trajectories using spline algorithms, combined with object pooling to optimize performance and maintain smooth 60+ FPS performance",
+        "Managed the full development cycle from prototype to playtests to polish, iterating based on player feedback",
+        "Implemented event-driven feedback system linking player actions to animation and UI updates, supporting adaptive difficulty adjustments"
+      ],
+      "tags": ["Unity C#", "VR"],
+      "link": "https://www.immergolabs.com/"
+    },
+    {
+      "role": "Unity Coding Intern",
+      "company": "Immergo Labs",
+      "date": "JUN 2024 - JUN 2025",
+      "bullets": [
+        "Built a Unity-based VR tool that enables users to create, save, and share custom physical therapy programs",
+        "Implemented a JSON-based data storage system on AWS S3 with versioning to reduce redundant uploads",
+        "Implemented an advanced waypoint authoring system to allow creators to design and visualize motion paths",
+        "Developed diverse game modes to cater to varying user preferences, featuring different environments, rewards, and difficulty levels",
+        "Designed an intuitive VR user interface tailored to accommodate users with various mobility challenges",
+        "Developed a tutorial system as an event-driven state machine that advances dynamically based on user actions"
+      ],
+      "tags": ["Unity C#", "VR"]
+    },
+    {
+      "role": "Research Assistant",
+      "company": "High Level Perception Lab",
+      "date": "APR 2023 - PRESENT",
+      "description": "Volunteered at a UCSC lab led by Professor Davidenko that focuses on how top down processes can impact human perception using computational and behavioral approaches. In particular, I worked with Prof. Davidenko to understand how we perceive faces and the phenomenon known as the Upper Eye Bias.",
+      "bullets": [
+        "Developed a MATLAB-based experiment that presents visual stimuli at different orientations and integrated real-time eye-tracking via the Gazepoint API",
+        "Implemented calibration, gaze recording, and automatic data logging to external files for over 100 subjects",
+        "Built a Python data analysis pipeline to process gaze metrics across trials and subjects, reducing analysis time by ~98% — from 1 hour of manual analysis per participant to under 2 minutes for all participants",
+        "Developed a tool to synchronize timing across multiple datasets to ensure accurate alignment of coordinates",
+        "Designed an intuitive VR user interface tailored to accommodate users with various mobility challenges",
+        "Programmed a study that was presented to the Vision Sciences Society with a principal investigator"
+      ],
+      "tags": ["Python", "Matlab"],
+      "link": "https://davidenko.sites.ucsc.edu/",
+      "big_link": {
+        "name": "Poster Abstract",
+        "link": "https://jov.arvojournals.org/article.aspx?articleid=2801092"
+      }
+    },
+    {
+      "role": "Student Assistant",
+      "company": "CEC Office of Compliance, Assistance & Enforcement",
+      "date": "MAY 2023 - JAN 2025",
+      "description": "Worked part time at a California Energy Comission office that ensures that products comply with energy and water standards.",
+      "bullets": [
+        "Developed a a Python web scraping tool to automate data collection from product pages, dynamically adapting to product types and page structures",
+        "Built a Flask-based interface to allow users to input URLs and trigger scraping via a user-friendly web app",
+        "Automated end-to-end data extraction and display, reducing manual input and enabling scalable product tracking",
+        "Verified data and reviewed test reports submitted to the Modernized Appliance Efficiency Database System (MAEDbS)"
+      ],
+      "tags": ["Python", "JavaScript"],
+      "link": "https://www.energy.ca.gov/about/divisions-and-offices/office-compliance-assistance-and-enforcement"
+    }
+  ],
+  "projects": [
+    {
+      "language": {
+        "Unity": {
+          "Projects": [
+            {
+              "title": "Colony 19 (2025)",
+              "title_link": "colony19.html",
+              "sub_title": "Steam Published VR game",
+              "role": "Technical Developer",
+              "bullets": [
+                "Developed procedural hand-grabbing animation in Unity that adapted to various 3D surfaces and models",
+                "Designed accessibility game modes for a climbing-focused game and in-game settings for inclusive gameplay",
+                "Implemented a dynamic ambient audio management system with 3D spatial sounds"
+              ],
+              "awards": [
+                {
+                  "name": "🏆1st Place in Best Tech Innovation / Execution",
+                  "description": "(UCSC Computer Science Game Design Capstone Series)"
+                },
+                {
+                  "name": "🏆3rd Place in Best Gameplay Design & Fun Factor",
+                  "description": "(UCSC Computer Science Game Design Capstone Series)"
+                }
+              ],
+              "link": {
+                "link": "https://store.steampowered.com/app/3674970/Colony_19/",
+                "name": "Steam Page"
+              }
+            },
+            {
+              "title": "Online Co-Op Survival Shooter (2025)",
+              "title_link": "shooter.html",
+              "role": "Tools Lead",
+              "bullets": [
+                "Implemented online multiplayer using Unity Netcode for GameObjects and Relay server for smooth synchronization of the game state",
+                "Built a weapon system with a class hierarchy to easily add new weapons, and designed an in-game UI",
+                "Developed a wave progression system featuring escalating difficulty and random spawn patterns"
+              ],
+              "awards": [
+                {
+                  "name": "\"FUN! Really funny engaging multiplayer game that could be rage indusing but also a good lesson on teamwork\"",
+                  "description": "- Playtester"
+                }
+              ],
+              "link": {
+                "link": "https://github.com/zchaplin/ShooterIHardlyKnowHer",
+                "name": "GitHub"
+              }
+            }
+          ],
+          "Prototypes": []
+        },
+        "TypeScript": {
+          "Projects": [
+            {
+              "title": "Garden Simulator (2023)",
+              "sub_title": "Multi-Language Offline-Enabled App",
+              "role": "Engine Lead",
+              "bullets": [
+                "Utilized Vite PWA plug-in to support offline web and mobile play",
+                "Incorporated internal and external DSLs used for level design and save mechanics",
+                "Enabled localization to 3 languages with a switchable internationalization systems"
+              ],
+              "awards": [
+                {
+                  "name": "🏆 Recognized by professor as a standout project in the class. Code was showcased with the praise:",
+                  "description": "\"I like the way you think—this is exactly how I would have done it.\""
+                }
+              ],
+              "links": [
+                {
+                  "link": "https://github.com/MikaPS/GardenSimulator2023/",
+                  "name": "GitHub"
+                },
+                {
+                  "link": "https://mikaps.github.io/GardenSimulator2023/",
+                  "name": "Live Project"
+                }
+              ]
+            },
+            {
+              "title": "Cross-Cultural Risk Perception Game (2024)",
+              "role": "Solo Developer",
+              "bullets": [
+                "Developed an interactive web-based game using TypeScript, modeling real-world risk-taking behaviors across cultures",
+                "Integrated academic research into gameplay design, simplifying complex behavioral concepts into accessible mechanics",
+                "Compared in-game choices to patterns in academic literature and provided personalized feedback mapping players' behavior to cultural risk profiles"
+              ],
+              "awards": [
+                {
+                  "name": "🏆 Selected by the professor as an exemplary project to be showcased in future seminar cohorts",
+                  "description": ""
+                }
+              ],
+              "links": [
+                {
+                  "link": "https://github.com/MikaPS/Culture-Cognition",
+                  "name": "GitHub"
+                },
+                {
+                  "link": "https://mikaps.github.io/Culture-Cognition/",
+                  "name": "Live Project"
+                },
+                {
+                  "link": "https://docs.google.com/document/d/1_RCh9lXEDKRd4QtPLgeqV1whRu4vUrF-NBowyJgFwNA/edit?usp=sharing",
+                  "name": "Academic Paper"
+                }
+              ]
+            }
+          ],
+          "Prototypes": [
+            {
+              "title": "Goal Tracking App (2025)",
+              "bullets": [
+                "Built a full-stack React app that lets users create goals and drag them across workflow stages",
+                "Designed and queried a PostgreSQL table to persist goals per-user and implemented real auth using anonymous sessions using Supabase"
+              ],
+              "links": [
+                {
+                  "link": "https://react-goal-tracking-varcel-gwotiqwxu-mikas-projects-02bb6b07.vercel.app/",
+                  "name": "Live Project"
+                }
+              ]
+            },
+            {
+              "title": "GPS Item Collection Game (2023)",
+              "bullets": [
+                "Built a browser-based, location-aware game that tracks player movement using the Geolocation API",
+                "Implemented dynamic map rendering, item spawning logic, pickup/drop-off mechanics, and area-trigger events"
+              ],
+              "links": [
+                {
+                  "link": "https://github.com/MikaPS/cmpm-121-demo-3",
+                  "name": "GitHub"
+                },
+                {
+                  "link": "https://mikaps.github.io/cmpm-121-demo-3/",
+                  "name": "Live Project"
+                }
+              ]
+            },
+            {
+              "title": "Window Physics Sandbox Game (2024)",
+              "bullets": [
+                "Developed a browser-based physics sandbox where resizing and moving the browser window triggers in-game events",
+                "Implemented ragdoll real-time collision physics, object spawning, and explosion effects"
+              ],
+              "links": [
+                {
+                  "link": "https://github.com/MikaPS/WindowProblems",
+                  "name": "GitHub"
+                },
+                {
+                  "link": "https://mikaps.github.io/WindowProblems/",
+                  "name": "Live Project"
+                }
+              ]
+            },
+            {
+              "title": "Atlantis Story Adventure Game (2022)",
+              "bullets": [
+                "Created a narrative-driven point-and-click adventure featuring branching endings, puzzle mini-games, and dynamic dialogue"
+              ],
+              "links": [
+                {
+                  "link": "https://github.com/MikaPS/ARTGProject",
+                  "name": "GitHub"
+                },
+                {
+                  "link": "https://mikaps.github.io/ARTGProject/",
+                  "name": "Live Project"
+                }
+              ]
+            },
+            {
+              "title": "Rhythm Typing Combat Game (2024)",
+              "bullets": [
+                "Built a fast-paced rhythm game where players defeat enemies by typing words in sync with timed patterns",
+                "Implemented input parsing, timing windows, animation queues, and score modifiers using a custom game loop"
+              ],
+              "links": [
+                {
+                  "link": "https://github.com/jaycub03/Radio-Game",
+                  "name": "GitHub"
+                },
+                {
+                  "link": "https://jaycub03.github.io/Radio-Game/",
+                  "name": "Live Project"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
