@@ -255,6 +255,41 @@
               ]
             }
           ]
+        },
+        "Python": {
+          "Projects": [
+            {
+              "title": "Top 5 Placement in a Pac-Man AI Agent Competition (2025)",
+              "bullets": [
+                "Built a multi-agent AI with pathfinding, decision scoring, and reinforcement learning",
+                "Developed state evaluation functions and conducted iterative testing and tuning to optimize agent behavior"
+              ]
+            },
+            {
+              "title": "Procedural Level Generation (2024)",
+              "bullets": [
+                "Developed an algorithm for procedural Mario levels using crossover, mutation, and fitness evaluation to generate diverse and functional maps",
+                "Designed structured data representations for map components and iterative simulation-based testing"
+              ]
+            },
+            {
+              "title": "MelAIdy (2024)",
+              "bullets": [
+                "Identified and extracted a large dataset of chord progressions from popular music and transformed raw MIDI/chord data into clean training and testing sets for machine learning",
+                "Built a Python preprocessing pipeline to convert symbolic music (start/end times, chord labels) into integer-encoded sequences compatible with NumPy/Keras models",
+                "Developed a next-chord prediction model using Keras, experimenting with model architectures, class mappings, and hyperparameters"
+              ]
+            },
+            {
+              "title": "Tic Tac Toe with Facial Expressions (2024)",
+              "bullets": [
+                "Trained a convolutional neural network (Keras/TensorFlow) to classify facial expressions (neutral, happy, surprise) from webcam images with ~70% test accuracy",
+                "Built a real-time emotion-detection pipeline using Python, OpenCV, and a custom function to preprocess frames, load the trained model, and output predictions for gameplay",
+                "Performed hyperparameter optimization, experimenting with dropout strategies, learning rates, and model configurations to reduce overfitting and improve validation accuracy",
+                "Applied transfer learning by fine-tuning the facial-expression model on a bees-vs-ants dataset, achieving a notable accuracy gain (60.5% vs 52.9%) compared to training from scratch"
+              ]
+            }
+          ]
         }
       }
     }
